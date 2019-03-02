@@ -22,7 +22,10 @@ $(document).on('click', '.newCharacter', function(){
         		var gifCharacters = $('<img>').attr('src', response.data[i].images.fixed_height.url)
         		gifCharacters.attr('sandy-still',response.data[i].images['fixed_height_still'].url)
         		gifCharacters.attr('sandy-anim',response.data[i].images.fixed_height.url)
+        		var gifRating = $('<p>').text(response.data[i].rating)
         		$('#gifs').append(gifCharacters)
+        		$('#gifs').append(gifRating)
+
         	}
         	console.log(response.data)
         });
