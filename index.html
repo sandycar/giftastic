@@ -4,17 +4,46 @@
 	<title>gifApp</title>
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		body {
+			background-color: black;
+		}
+		.newCharacter {
+			margin:2px;
+		}
+
+		h1{
+			margin-top: 10px;
+			color: white
+		}
+		p{
+			letter-spacing: 1px;
+			color: white;
+		}
+
+		#characterForm{
+			float: right;
+		}
+	</style>
 </head>
 <body>
-<div id='buttons'></div>
-<div id='gifs'>
-	
-</div>
-<div>
-	<form>
-		<input id="inputCharacter" type="text" name="enter-movie-character"/>
-		<input id="submit" type="submit" name="submit-button">
-	</form>
+<div class='container'>
+	<h1>Now that's what I call Giftastic!</h1>
+	<p class="lead">Create a button based on a character from a movie, then click on it to see related gifs.</p>
+	<!-- buttons -->
+	<div class="btn-group" role="group" aria-label="Basic example" id='buttons'></div>
+
+	<!-- gifs -->
+	<div id='gifs'></div>
+
+	<!-- enter a new character -->
+	<div id= 'characterForm'>
+		<form>
+			<input id="inputCharacter" type="text" name="enter-movie-character"placeholder='Enter a movie character'/>
+			<input id="submit" type="submit" name="submit-button btn btn-outline-secondary">
+		</form>
+	</div>
 </div>
 
 <!-- jquery -->
