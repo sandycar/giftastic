@@ -19,12 +19,14 @@ $(document).on('click', '.newCharacter', function(){
           method: "GET"
         }).then(function(response) {
         	for (var i=0; i<10; i++){
+       			var div= $('<div>')
         		var gifCharacters = $('<img>').attr('src', response.data[i].images.fixed_height.url)
         		gifCharacters.attr('sandy-still',response.data[i].images['fixed_height_still'].url)
         		gifCharacters.attr('sandy-anim',response.data[i].images.fixed_height.url)
         		var gifRating = $('<p>').text(response.data[i].rating)
-        		$('#gifs').append(gifCharacters)
-        		$('#gifs').append(gifRating)
+
+        		div.append(gifCharacters, gifRating)
+        		$('#gifs').append(div)
 
         	}
         	console.log(response.data)
